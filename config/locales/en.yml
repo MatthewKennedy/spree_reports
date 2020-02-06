@@ -1,0 +1,6 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  sales_by_store: "Sales Total By Store"
+  sales_by_store_report_description: "View sales from each store"

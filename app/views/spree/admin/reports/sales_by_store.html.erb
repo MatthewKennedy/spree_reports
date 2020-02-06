@@ -1,0 +1,45 @@
+<% content_for :page_title do %>
+  <%= link_to Spree.t(:reports), spree.admin_reports_url %> /
+  <%= Spree.t(:sales_by_store) %>
+<% end %>
+
+
+<div class="card bg-light mb-3">
+  <div class="card-body">
+    <%= search_form_for @search, url: spree.sales_by_store_admin_reports_path  do |s| %>
+      <div class="form-group date-range-filter">
+        <%= label_tag nil, Spree.t(:date_range) %>
+        <div class="date-range-filter row">
+          <div class="col-md-6">
+            <%= s.text_field :completed_at_gt, class: 'datepicker datepicker-from form-control', value: datepicker_field_value(params[:q][:completed_at_gt]) %>
+          </div>
+          <div class="col-md-6">
+            <%= s.text_field :completed_at_lt, class: 'datepicker datepicker-to form-control', value: datepicker_field_value(params[:q][:completed_at_lt]) %>
+        </div>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <%= button Spree.t(:search), 'search' %>
+      </div>
+    <% end %>
+
+  </div>
+</div>
+
+<table class="table table-bordered admin-report" data-hook="sales_total">
+  <thead>
+    <tr>
+      <th><%= Spree.t(:store_name) %></th>
+      <th><%= Spree.t(:total) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @totals.each do |key, row| %>
+      <tr>
+        <td><%= key %></td>
+        <td><%= Spree::Money.new(row[:sales_total], { currency: key }) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
