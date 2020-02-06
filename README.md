@@ -6,7 +6,7 @@ Introduction goes here.
 
 1. Add this extension to your Gemfile with this line:
   ```ruby
-  gem 'spree_reports', github: '[your-github-handle]/spree_reports'
+  gem 'spree_reports', github: 'matthewkennedy/spree_reports'
   ```
 
 2. Install the gem using Bundler:
