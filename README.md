@@ -1,8 +1,10 @@
 # SpreeReports
 
-WIP: Because Spree 4.1 > is a multi store platform, reports need to be on a per store basis and also as a whole store performance, but then we have miltiple currencies to deal with, but no base currency.
-
-All these factors need to be concidered before moving forward with this extension.
+WIP: Because Spree 4.1 > is now a multi-store platform
+- Reports need to be on a per store basis
+- Reports also need to show performance across all stores
+- Multiple currencies need factoring in
+- Will need a base currency
 
 ## Installation
 
